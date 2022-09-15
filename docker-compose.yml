@@ -1,0 +1,7 @@
+
+elastic-search-db:
+  image: 'elasticsearch'
+  container_name: db
+  ports:
+    - "9200:9200"
+    - "9300:9300"
