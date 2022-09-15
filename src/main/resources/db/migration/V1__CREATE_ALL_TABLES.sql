@@ -1,0 +1,5 @@
+CREATE TABLE video(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(240) NOT NULL,
+    description VARCHAR(240) NOT NULL
+)
