@@ -21,7 +21,7 @@ public class ReactiveElasticsearchClientVideoSearcher implements VideoSearcher {
         this.converter = converter;
     }
 
-    public <T> Mono<List<Video>> findAllByQuery(String query) {
+    public Mono<List<Video>> findAllByQuery(String query) {
         return this.searcher.findAllByCompletionQuery(query, "video", "name_suggester", new String[]{"name", "description"},
                 converter);
     }
