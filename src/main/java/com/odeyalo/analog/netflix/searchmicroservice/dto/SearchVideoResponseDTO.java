@@ -1,40 +1,25 @@
 package com.odeyalo.analog.netflix.searchmicroservice.dto;
 
+import com.odeyalo.analog.netflix.searchmicroservice.entity.Video;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 public class SearchVideoResponseDTO {
     private String videoId;
     private String videoName;
-    private String videoAuthor;
 
-    public SearchVideoResponseDTO() {
+    public Video toVideo() {
+        return Video.builder().name(videoName).id(videoId).build();
     }
 
-    public SearchVideoResponseDTO(String videoId, String videoName, String videoAuthor) {
-        this.videoId = videoId;
-        this.videoName = videoName;
-        this.videoAuthor = videoAuthor;
-    }
-
-    public String getVideoId() {
-        return videoId;
-    }
-
-    public void setVideoId(String videoId) {
-        this.videoId = videoId;
-    }
-
-    public String getVideoName() {
-        return videoName;
-    }
-
-    public void setVideoName(String videoName) {
-        this.videoName = videoName;
-    }
-
-    public String getVideoAuthor() {
-        return videoAuthor;
-    }
-
-    public void setVideoAuthor(String videoAuthor) {
-        this.videoAuthor = videoAuthor;
+    public void fromVideo(Video video) {
+        this.videoId = video.getId();
+        this.videoName = video.getName();
     }
 }
