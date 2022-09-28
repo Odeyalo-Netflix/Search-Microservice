@@ -7,7 +7,6 @@ import org.springframework.data.elasticsearch.repository.config.EnableReactiveEl
 @SpringBootApplication
 @EnableReactiveElasticsearchRepositories
 public class SearchMicroserviceApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SearchMicroserviceApplication.class, args);
     }
