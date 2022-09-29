@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface VideoRepository extends ReactiveElasticsearchRepository<Video, Long> {
+public interface VideoRepository extends ReactiveElasticsearchRepository<Video, String> {
 
     Flux<Video> findVideoByName(String name);
 
